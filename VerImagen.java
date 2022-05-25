@@ -13,6 +13,7 @@ public class VerImagen extends JFrame
 	JPanel panel3 = new JPanel();
 	JPanel panel4 = new JPanel();
 	ArrayList<String> fotografos = new ArrayList<String>();
+	ArrayList<String> fotos = new ArrayList<String>();
 	public VerImagen() throws SQLException
 	{
 		setSize(500,400);
@@ -23,7 +24,7 @@ public class VerImagen extends JFrame
 		JLabel labelfoto = new JLabel ("Fotografo: ");
 		panel1.add(labelfoto);
 		JComboBox combo = new JComboBox();
-		fotografos = Fotografo.listaFotografo();
+		fotografos = Fotografo2.listaFotografo();
 		for (int i=0;i<fotografos.size();i++)
 		{
 			combo.addItem(fotografos.get(i));
@@ -37,8 +38,9 @@ public class VerImagen extends JFrame
 		add(panel2);
 		//PANEL 3 (ABAJO IZQUIERDA)
 		panel3.setLayout(new GridLayout(1,1));
-		JButton a = new JButton ("A");
-		panel3.add(a);
+		JList lista = new JList();
+		
+ 		panel3.add(lista);
 		add(panel3);
 		//PANEL 4 (ABAJO DERECHA)
 		panel4.setLayout(new GridLayout(1,1));
